@@ -30,7 +30,12 @@ with st.expander("About this Page"):
 
 with st.expander("Model Used 🌳"):
     st.markdown("""
-    The prediction is powered by a **Random Forest Regressor**, a robust and versatile machine learning algorithm known for its accuracy and ability to handle complex datasets.
+    The prediction is powered by a **Random Forest Regressor**, a robust and versatile machine learning algorithm known for its accuracy and ability to handle complex datasets. This model has been tuned with the following parameters:
+    
+    - **Number of Estimators (n_estimators):** 382
+    - **Maximum Depth (max_depth):** 10
+    - **Minimum Samples Split (min_samples_split):** 8
+    - **Random State:** 42
     """)
 
 with st.expander("Model Performance Metrics 📈"):

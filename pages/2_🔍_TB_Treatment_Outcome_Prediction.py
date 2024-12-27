@@ -4,7 +4,7 @@ import numpy as np
 import shap
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
-from xgboost import XGBClassifier
+from sklearn.linear_model import LogisticRegression
 import streamlit.components.v1 as components
 
 st.set_page_config(
@@ -15,28 +15,35 @@ st.set_page_config(
 # Title of the page
 st.title("TB Treatment Outcome Prediction with Explainable AI 🔍💊")
 
-# Introduction Section with Collapsible Panels
+# Introduction
 with st.expander("About this Page"):
     st.markdown("""
-    Welcome to the **Treatment Outcome Prediction** page! Here, we use advanced machine learning models to predict the outcome of TB treatment for patients, ensuring personalized and effective care management.
+    Welcome to the **Treatment Outcome Prediction** page! Here, we use a highly tuned Logistic Regression model to predict the outcome of TB treatment for patients, ensuring personalized and effective care management.
     """)
 
-with st.expander("Model Used 🌟"):
+with st.expander("Model Used 🔧"):
     st.markdown("""
-    The prediction is powered by an **XGBoost Classifier**, a highly efficient and flexible machine learning algorithm known for its exceptional performance on structured datasets and its ability to handle both classification and regression tasks.
+    The prediction is powered by a **Logistic Regression** model with the following parameters:
+    
+    - **C:** 7.9518
+    - **Penalty:** l1
+    - **Solver:** liblinear
+    - **Max Iterations:** 1050
+
+    This model is optimized for performance and interpretability.
     """)
 
 with st.expander("Model Performance Metrics 📈"):
     st.markdown("""
     Our machine learning model has been evaluated using the following metrics:
 
-    - **Accuracy:** 1.0
-    - **Precision:** 1.0
-    - **Recall:** 1.0
-    - **F1-Score:** 1.0
-    - **AUC (Area Under the Curve):** 1.0
+    - **Accuracy:** 0.9440
+    - **Precision:** 0.9870
+    - **Recall:** 0.9268
+    - **F1-Score:** 0.9560
+    - **AUC (Area Under the Curve):** 0.9807
 
-    These metrics indicate that the model provides perfect predictions for the dataset, showcasing its reliability and effectiveness in predicting treatment outcomes.
+    These metrics indicate that the model provides highly reliable predictions for the dataset.
     """)
 
 with st.expander("How It Works 🔍"):
@@ -79,11 +86,8 @@ y = data['Binary_Treatment_Outcome']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
 # Train XGBoost Model
-model = XGBClassifier(
-    colsample_bytree=0.6559, gamma=0.26, learning_rate=0.1193,
-    max_depth=8, min_child_weight=2, n_estimators=829,
-    reg_alpha=0.2249, reg_lambda=0.3952, subsample=0.9633,
-    random_state=42
+model = LogisticRegression(
+    C=7.951759613930136, penalty='l1', solver='liblinear', max_iter=1050, random_state=42
 )
 model.fit(X_train, y_train)
 
@@ -105,6 +109,8 @@ mappings = {
         4: "Transfer out",
     },
 }
+
+from sklearn.metrics import roc_curve, roc_auc_score, precision_recall_curve
 
 # Interactive Prediction in the Sidebar
 st.sidebar.write("### Input Patient Data")
@@ -145,7 +151,7 @@ if st.sidebar.button("Predict and Explain"):
     """, unsafe_allow_html=True)
 
     # SHAP Explainer
-    explainer = shap.TreeExplainer(model)
+    explainer = shap.Explainer(model, X_train)
     shap_values = explainer(user_input_df)
 
     # SHAP Waterfall Plot
