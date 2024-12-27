@@ -7,3 +7,6 @@ shap
 scikit-learn
 lime
 scipy
+ipython
+xgboost
+boruta
