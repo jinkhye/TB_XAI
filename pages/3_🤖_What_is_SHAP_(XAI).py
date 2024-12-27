@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title("🤖 What_is_SHAP_(XAI)")
+st.title("🤖 What is SHAP (XAI)")
     
 st.markdown("""
 SHAP (SHapley Additive exPlanations) values explain how each feature contributes to a model's prediction.
