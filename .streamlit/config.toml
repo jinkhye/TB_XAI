@@ -1,0 +1,6 @@
+[theme]
+primaryColor = "#2B79C2"  # Soft medium blue
+backgroundColor = "#F3F7FA"  # Very light blue-gray
+secondaryBackgroundColor = "#D9E7F0"  # Muted blue-gray
+textColor = "#1C2E4A"  # Dark navy gray
+font = "sans serif"
