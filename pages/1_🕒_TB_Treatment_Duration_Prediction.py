@@ -97,12 +97,14 @@ RF_PARAMS = {'max_depth': 10, 'min_samples_split': 9, 'n_estimators': 393}
 GBR_PARAMS = {'learning_rate': 0.012970917280826846, 'max_depth': 3, 'n_estimators': 443}
 
 # Model Selection
-st.sidebar.header("🧠 Select a Model")
-model_choice = st.sidebar.selectbox(
-    "Choose a model:",
-    ["Support Vector Regressor", "Random Forest", "Gradient Boosting Regressor"],
-    index=1  # Set the default selection to "Random Forest"
-)
+# st.sidebar.header("🧠 Select a Model")
+# model_choice = st.sidebar.selectbox(
+#     "Choose a model:",
+#     ["Support Vector Regressor", "Random Forest", "Gradient Boosting Regressor"],
+#     index=1  # Set the default selection to "Random Forest"
+# )
+
+model_choice = "Random Forest"
 
 # Add to Sidebar
 st.sidebar.header("Model Details and Insights")
