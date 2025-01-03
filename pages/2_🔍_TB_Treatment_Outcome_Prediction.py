@@ -76,12 +76,14 @@ RF_PARAMS = {'bootstrap': False, 'max_depth': None, 'max_features': 'log2', 'min
 XG_PARAMS = {'colsample_bytree': 0.8405197135484546, 'gamma': 0.11875323564623497, 'learning_rate': 0.09004457857440497, 'max_depth': 6, 'min_child_weight': 1, 'n_estimators': 508, 'reg_alpha': 0.43429956409473014, 'reg_lambda': 0.22359583851945264, 'subsample': 0.9816112697203057}
 
 # Model Selection
-st.sidebar.header("🧠 Select a Model")
-model_choice = st.sidebar.selectbox(
-    "Choose a model:",
-    ["Logistic Regression", "Random Forest", "XGBoost"],
-    index=0
-)
+# st.sidebar.header("🧠 Select a Model")
+# model_choice = st.sidebar.selectbox(
+#     "Choose a model:",
+#     ["Logistic Regression", "Random Forest", "XGBoost"],
+#     index=0
+# )
+
+model_choice = "Logistic Regression"
 
 # Display Model Details Dynamically
 st.sidebar.header("Model Details and Insights")
