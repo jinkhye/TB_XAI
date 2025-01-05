@@ -12,13 +12,13 @@ import shap
 import streamlit.components.v1 as components
 
 st.set_page_config(
-    page_title="Treatment Duration Prediction with XAI",
+    page_title="Treatment Duration Prediction through XAI",
     page_icon="🕒",
     layout="wide",
 )
 
 # Title of the page
-st.title("TB Treatment Duration Prediction with Explainable AI 🕒💊")
+st.title("TB Treatment Duration Prediction through Explainable AI 🕒💊")
 
 st.markdown("""
 Welcome to the **Treatment Duration Prediction** page! Here, we use advanced machine learning models to predict the duration of TB treatment for patients, ensuring personalized and effective care management.
