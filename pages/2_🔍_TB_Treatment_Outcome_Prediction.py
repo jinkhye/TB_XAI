@@ -10,13 +10,13 @@ from xgboost import XGBClassifier
 import streamlit.components.v1 as components
 
 st.set_page_config(
-    page_title="Treatment Outcome Prediction with XAI",
+    page_title="Treatment Outcome Prediction through XAI",
     page_icon="🔍",
     layout="wide",
 )
 
 # Title of the page
-st.title("TB Treatment Outcome Prediction with Explainable AI 🔍💊")
+st.title("TB Treatment Outcome Prediction through Explainable AI 🔍💊")
 
 st.markdown("""
 Welcome to the **Treatment Outcome Prediction** page! Here, we use advanced machine learning models to predict the outcome of TB treatment for patients, ensuring personalized and effective care management.
