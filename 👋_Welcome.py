@@ -7,7 +7,7 @@ st.set_page_config(
 )
 
 # Set the title of the app
-st.title("TB Treatment Duration and Outcome Prediction with Explainable AI 🩺")
+st.title("TB Treatment Duration and Outcome Prediction through Explainable AI 🩺")
 
 # Introduction Section
 st.markdown("""
