@@ -129,11 +129,11 @@ if model_choice == "Random Forest":
         st.markdown("""
         Our machine learning model has been evaluated using the following metrics:
 
-        - **Accuracy:** 0.9794
-        - **Precision:** 0.9947
-        - **Recall:** 0.9744
-        - **F1-Score:** 0.9843
-        - **AUC:** 0.9819
+        - **Accuracy:** 0.9840
+        - **Precision:** 0.9877
+        - **Recall:** 1.0000
+        - **F1-Score:** 0.9756
+        - **AUC:** 1.0000
         """)
 
     model = RandomForestClassifier(**RF_PARAMS, random_state=42)
@@ -159,11 +159,11 @@ if model_choice == "Logistic Regression":
         st.markdown("""
         Our machine learning model has been evaluated using the following metrics:
 
-        - **Accuracy:** 0.9862
-        - **Precision:** 0.9949
-        - **Recall:** 0.9846
-        - **F1-Score:** 0.9896
-        - **AUC:** 0.9870
+        - **Accuracy:** 0.9920
+        - **Precision:** 0.9939
+        - **Recall:** 1.0000
+        - **F1-Score:** 0.9878
+        - **AUC:** 1.0000
         """)
 
     # model = XGBClassifier(**XG_PARAMS, random_state=42)
