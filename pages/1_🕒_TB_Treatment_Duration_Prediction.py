@@ -104,7 +104,7 @@ GBR_PARAMS = {'learning_rate': 0.012970917280826846, 'max_depth': 3, 'n_estimato
 #     index=1  # Set the default selection to "Random Forest"
 # )
 
-model_choice = "Random Forest"
+model_choice = "Gradient Boosting Regressor"
 
 # Add to Sidebar
 st.sidebar.header("Model Details and Insights")
