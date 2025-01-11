@@ -83,12 +83,12 @@ XG_PARAMS = {'colsample_bytree': 0.8405197135484546, 'gamma': 0.1187532356462349
 #     index=0
 # )
 
-model_choice = "XGBoost"
+model_choice = "Logistic Regression"
 
 # Display Model Details Dynamically
 st.sidebar.header("Model Details and Insights")
 
-if model_choice == "Logistic Regression":
+if model_choice == "Logistic Regression2":
     with st.sidebar.expander("Model Used 🔧"):
         st.markdown(f"""
         The prediction is powered by a **Logistic Regression** model with the following parameters:
@@ -138,8 +138,8 @@ if model_choice == "Random Forest":
 
     model = RandomForestClassifier(**RF_PARAMS, random_state=42)
 
-
-if model_choice == "XGBoost":
+# XGBoost
+if model_choice == "Logistic Regression":
     with st.sidebar.expander("Model Used 🔧"):
         st.markdown(f"""
         The prediction is powered by a **XGBoost** model with the following parameters:
@@ -166,7 +166,8 @@ if model_choice == "XGBoost":
         - **AUC:** 0.9870
         """)
 
-    model = XGBClassifier(**XG_PARAMS, random_state=42)
+    # model = XGBClassifier(**XG_PARAMS, random_state=42)
+    model = LogisticRegression(**LR_PARAMS, random_state=42)
 
 with st.sidebar.expander("Why is this Important? 🌟"):
     st.markdown("""
