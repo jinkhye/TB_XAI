@@ -83,7 +83,7 @@ XG_PARAMS = {'colsample_bytree': 0.8405197135484546, 'gamma': 0.1187532356462349
 #     index=0
 # )
 
-model_choice = "Logistic Regression"
+model_choice = "XGBoost"
 
 # Display Model Details Dynamically
 st.sidebar.header("Model Details and Insights")
