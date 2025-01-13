@@ -296,10 +296,13 @@ if st.button("Predict and Explain"):
     # Predict the treatment outcome for user input
     prediction = model.predict(user_input_df)[0]
     prediction_label = "Successful" if prediction == 1 else "Unsuccessful"
+    color = "#4CAF50" if prediction == 1 else "#FF0000"
+    background_color = "#F0FFF0" if prediction == 1 else "#FFF0F0"
+    
     st.markdown(f"""
-        <div style="text-align: center; padding: 20px; border: 2px solid #4CAF50; border-radius: 10px; background-color: #F0FFF0;">
-            <h2 style="color: #4CAF50;">🎯 Predicted Treatment Outcome</h2>
-            <h1 style="color: #000;">{prediction_label}</h1>
+        <div style="text-align: center; padding: 20px; border: 2px solid {color}; border-radius: 10px; background-color: {background_color};">
+            <h2 style="color: {color};">🎯 Predicted Treatment Outcome</h2>
+            <h1 style="color: {color};">{prediction_label}</h1>
         </div>
     """, unsafe_allow_html=True)
     st.markdown("""---""")
